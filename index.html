@@ -111,8 +111,106 @@
             </div>
             </div>
         </section>
+
+        <section class="financial-intelligence-section container">
+            <div class="fi-layout">
+                <div class="fi-left-col">
+                    <div class="fi-tagline">
+                        <span class="dot-green"></span>
+                        Financial Intelligence
+                    </div>
+                    <h2 class="fi-headline fade-in-up">A financial platform that<br>drives investing forward</h2>
+                    <p class="fi-subheadline fade-in-up">Built with intelligence to transform how you invest, adapt to<br>change, and deliver consistent financial performance.</p>
+                    
+                    <div class="fi-tabs">
+                        <div class="fi-tab active">
+                            <h3>Automate your workflows</h3>
+                            <p>Build or use predefined workflows to manage investments, track<br>performance, and adapt efficiently to market conditions.</p>
+                        </div>
+                        <div class="fi-tab">
+                            <h3>Access prompt library</h3>
+                        </div>
+                        <div class="fi-tab">
+                            <h3>Manage finance agents</h3>
+                        </div>
+                        <div class="fi-tab">
+                            <h3>Chat with data source</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fi-right-col fade-in-up">
+                    <img src="assets/forest_bg.png" alt="Forest Landscape" class="fi-bg-image" />
+                    <div class="fi-overlay-card">
+                        <div class="fi-card-header">
+                            <div class="fi-card-title">
+                                <span class="vertical-line"></span>
+                                Automate workflows
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </div>
+                        <div class="fi-card-list">
+                            <div class="fi-card-item">
+                                <div class="fi-item-text">
+                                    <h4>Market analysis</h4>
+                                    <p>Trend inspection</p>
+                                </div>
+                                <div class="fi-flow-badge">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    5 flows
+                                </div>
+                            </div>
+                            <div class="fi-card-item">
+                                <div class="fi-item-text">
+                                    <h4>Risk monitoring</h4>
+                                    <p>Volatility tracking</p>
+                                </div>
+                                <div class="fi-flow-badge">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    7 flows
+                                </div>
+                            </div>
+                            <div class="fi-card-item">
+                                <div class="fi-item-text">
+                                    <h4>Portfolio optimization</h4>
+                                    <p>Allocation review</p>
+                                </div>
+                                <div class="fi-flow-badge">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    3 flows
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
 
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
