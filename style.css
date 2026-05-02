@@ -1,0 +1,246 @@
+:root {
+  --bg-color: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --font-family: 'Inter', sans-serif;
+  --primary-btn-bg: #ffffff;
+  --primary-btn-text: #000000;
+  --secondary-btn-bg: #18181b;
+  --secondary-btn-border: #27272a;
+  --nav-text: #d4d4d8;
+  --accent-dot: #e4e4e7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle dot matrix background behind the hero section */
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  z-index: -1;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+  /* Fade out the pattern towards the edges and bottom */
+  mask-image: radial-gradient(ellipse at center 40%, black 10%, transparent 60%);
+  -webkit-mask-image: radial-gradient(ellipse at center 40%, black 10%, transparent 60%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: white;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+/* To simulate the globe/waves logo */
+.logo svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn.lg {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-btn-bg);
+  color: var(--primary-btn-text);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #f4f4f5;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-btn-bg);
+  color: white;
+  border-color: var(--secondary-btn-border);
+}
+
+.btn-secondary:hover {
+  background-color: #27272a;
+}
+
+.btn-white {
+  background-color: white;
+  color: black;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.btn-white:hover {
+  background-color: #f4f4f5;
+}
+
+/* Hero section */
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Actually, looking at the image, text is left aligned within its container */
+}
+
+/* The hero content container needs to be wide enough but text is left aligned */
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  text-align: left;
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  font-size: 0.875rem;
+  color: var(--nav-text);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.dot {
+  width: 14px;
+  height: 8px;
+  background-color: var(--text-primary);
+  border-radius: 9999px; /* slightly elongated pill dot */
+}
+
+.headline {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.subheadline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hero image */
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 0.75rem 0.75rem 0 0; /* rounded top */
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  box-shadow: 0 0 50px 10px rgba(255,255,255,0.02);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Floating Badges */
+.floating-badges {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  z-index: 100;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.badge svg {
+  margin-right: 0.25rem;
+}
