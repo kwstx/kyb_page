@@ -759,6 +759,86 @@
                     <a href="#explore-workflows" class="btn btn-white">Explore workflows</a>
                 </div>
             </div>
+        <section class="faq-section container">
+            <div class="faq-header fade-in-up">
+                <h2 class="faq-headline">Everything explained to<br>help you move forward</h2>
+                <p class="faq-subheadline">All you need to know about the platform, pricing,<br>security, workflows, and team collaboration.</p>
+            </div>
+
+            <div class="faq-grid fade-in-up" style="transition-delay: 0.1s;">
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">How does the platform support investing workflows?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Centralizes decisions, research, and execution so teams manage investing workflows faster with full visibility.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">How does pricing scale for teams?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Plans scale with team size, advanced workflows, and infrastructure needs as organizations grow over time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">Is my financial data secure and compliant?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Data is protected with encryption, governance controls, and compliance aligned with industry security standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">What compliance standards does the platform meet?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>The platform aligns with SOC2, ISO, GDPR, and CCPA to ensure strong regulatory compliance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">Does the platform support custom models?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Yes, you can build, deploy, and manage custom models tailored to specific investment strategies.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">Can I automate workflows using financial agents?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Yes, financial agents automate tasks, monitor signals, and execute workflows based on predefined logic.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">Can I integrate existing data sources?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Integrate internal systems, external providers, and data tools through secure and flexible infrastructure connections.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item-header">
+                        <span class="faq-item-text">How does collaboration work across teams?</span>
+                        <span class="faq-item-icon"></span>
+                    </div>
+                    <div class="faq-item-content">
+                        <p>Teams collaborate through shared workflows, permissions, and centralized visibility across investing operations and research.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -795,8 +875,25 @@
                     tab.classList.add('active');
                 });
             });
+
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-item-header');
+                if (header) {
+                    header.addEventListener('click', () => {
+                        const isActive = item.classList.contains('active');
+                        
+                        // Close all items
+                        faqItems.forEach(faq => faq.classList.remove('active'));
+                        
+                        // If the clicked item wasn't already active, open it
+                        if (!isActive) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
         });
     </script>
 </body>
-
 </html>
